@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "banquise";
+    src: url(font/FT88-Regular.otf);
+}
+body {
+    background-image: url("image/image 1.jpg"); /* Vérifie le chemin */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+#splash-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url("image/image 2.jpg"); /* Vérifie aussi ce chemin */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.8s ease-in-out;
+    z-index: 1000;
+}
+
+#main-content {
+    display: none; /* Caché jusqu'à la disparition du splash */
+    padding: 20px;
+}
+
+#message-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "banquise";
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    display: none;
+    z-index: 1000; /* S'assurer qu'il est visible */
+}
+
+#wake-up-btn {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: width 0.2s ease, height 0.2s ease;
+    z-index: 1001;
+}
+
+#wake-up-btn img {
+    display: block;
+    width: 100%; /* Fait en sorte que l'image grandisse avec le bouton */
+    height: auto;
+    pointer-events: none; /* Empêche l'image d'interférer avec le clic */
+}
